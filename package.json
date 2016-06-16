@@ -23,6 +23,7 @@
     "grunt-concurrent": "~0.4.3",
     "grunt-istanbul": "~0.2.4",
     "grunt-env": "~0.4.1",
+    "mocha-junit-reporter": "1.11.1",
     "should": "~3.1.2",
     "nock": "~0.27.2",
     "supertest": "~0.9.0"
