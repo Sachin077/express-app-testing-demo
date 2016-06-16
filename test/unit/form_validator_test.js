@@ -14,7 +14,7 @@ describe('form_validator.js', function () {
     it('should return true for valid list of search terms', function () {
 
       var tags = 'california, sunset, red';
-      formValidator.isValidCommaDelimitedList(tags).should.be.false;
+      formValidator.isValidCommaDelimitedList(tags).should.be.true;
 
     });
 
