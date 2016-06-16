@@ -62,6 +62,7 @@ module.exports = function (grunt) {
                     }
                 }
             }
+          },
 
     mochaTest: {
       unit: {
@@ -160,6 +161,6 @@ module.exports = function (grunt) {
   grunt.registerTask('test', ['node_mocha:test']);
 
   grunt.registerTask('coverage', ['jshint', 'clean', 'copy:views', 'env:coverage',
-    'instrument', 'node_mocha:test', 'mochaTest:route', 'storeCoverage', 'makeReport']);
+    'instrument', 'mochaTest:unit', 'mochaTest:route', 'storeCoverage', 'makeReport']);
 
 };
