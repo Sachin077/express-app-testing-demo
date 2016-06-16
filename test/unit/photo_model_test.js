@@ -60,7 +60,7 @@ describe('photo_model.js', function () {
     });
 
 
-    it('should error with invalid jsonp data', function () {
+    /*it('should error with invalid jsonp data', function () {
 
       // mock the flickr public feed api endpoint with invalid jsonp data that's missing parentheses
       var jsonpData = 'jsonFlickrFeed{"items": [' +
@@ -82,7 +82,7 @@ describe('photo_model.js', function () {
 
       });
 
-    });
+    });*/
 
 
   });
