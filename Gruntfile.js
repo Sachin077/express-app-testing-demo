@@ -53,7 +53,7 @@ module.exports = function (grunt) {
     mochaTest: {
       unit: {
         options: {
-          reporter: 'spec'
+          reporter: 'node_modules/mocha-junit-reporter'
         },
         src: ['test/unit/*.js']
       },
