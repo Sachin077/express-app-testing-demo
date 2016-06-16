@@ -48,7 +48,20 @@ module.exports = function (grunt) {
         }
       }
     },
-
+    
+    'node_mocha': {
+            test: {
+                src: ['test/unit/*.js'],
+                options: {
+                    mochaOptions: {
+                        globals: ['expect'],
+                        timeout: 3000,
+                        ignoreLeaks: false,
+                        ui: 'bdd',
+                        reporter: 'node_modules/mocha-junit-reporter'
+                    }
+                }
+            }
 
     mochaTest: {
       unit: {
@@ -138,14 +151,15 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-istanbul');
   grunt.loadNpmTasks('grunt-env');
+   grunt.loadNpmTasks('grunt-node-mocha');
 
 
   // tasks
   grunt.registerTask('server', ['concurrent:target']);
   grunt.registerTask('default', ['jshint', 'server']);
-  grunt.registerTask('test', ['mochaTest:unit', 'mochaTest:route', 'mochaTest:api']);
+  grunt.registerTask('test', ['node_mocha:test']);
 
   grunt.registerTask('coverage', ['jshint', 'clean', 'copy:views', 'env:coverage',
-    'instrument', 'mochaTest:unit', 'mochaTest:route', 'storeCoverage', 'makeReport']);
+    'instrument', 'node_mocha:test', 'mochaTest:route', 'storeCoverage', 'makeReport']);
 
 };
